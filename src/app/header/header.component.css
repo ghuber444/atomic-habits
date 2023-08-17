@@ -1,0 +1,12 @@
+header {
+  width: 100%;
+  background-color: #D2E9E9;
+  color: rgba(240, 248, 255, 0.852);
+  padding-top: 7%;
+}
+
+h1 {
+  padding: 1em;
+  color: white;
+  font-size: 2rem;
+}

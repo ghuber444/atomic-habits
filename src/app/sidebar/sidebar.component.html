@@ -1,0 +1,41 @@
+<mat-sidenav-container >
+  <mat-sidenav opened mode="side">
+    <mat-card-content>
+      <div class="heading">
+        <h2>Olá,</h2><br><p></p>
+        <!-- <img mat-card-avatar src="https://upload.wikimedia.org/wikipedia/commons/3/32/Dribbble_logo.png" alt=""> -->
+      </div>
+    <hr>
+    <div class="projetos-info">
+      <div class="info">
+        <p class="info-texto">Nº total de projetos:</p>
+        <p> - 10</p>
+      </div>
+      <div class="info">
+        <p class="info-texto">Por fazer:</p>
+        <p> - 10</p>
+      </div>
+      <div class="info">
+        <p class="info-texto">Em progresso:</p>
+        <p> - 10</p>
+      </div>
+      <div class="info">
+        <p class="info-texto">Terminados:</p>
+        <p> - 10</p>
+      </div>
+    </div>
+    <hr>
+      <div class="btns">
+        <button mat-raised-button (click)="openAboutDialog()">About</button>
+        <button mat-raised-button (click)="openQuoteDialog()">Daily motivation boost</button>
+
+      </div>
+    </mat-card-content>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header></app-header>
+    <app-tab></app-tab>
+    <app-butao-nova-tarefa></app-butao-nova-tarefa>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

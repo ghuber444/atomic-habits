@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: .75rem
+}
+
+mat-card-header {
+  margin: 0 0 1rem .3rem;
+}
+
+mat-chip {
+  margin-right: .5rem;
+}
+
+.card {
+  margin: .5rem;
+  padding: .5rem;
+  width: 95%;
+
+}
+
+.mdc-card__actions {
+  margin-left: auto;
+}
+
+.mat-mdc-tab-body-content {
+  height: 100%;
+  overflow: hidden;
+}
