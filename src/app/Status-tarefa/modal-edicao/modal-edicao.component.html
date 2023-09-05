@@ -1,13 +1,13 @@
-<div class="form">
+<form class="form" [formGroup]="tarefaForm" (ngSubmit)="ngOnSubmit()">
   <h1>Nova Tarefa</h1>
 <mat-form-field>
   <mat-label>Tarefa</mat-label>
-  <input matInput plahcehvolder="Nova Tarefa" [(ngModel)]="tarefa.nome">
+  <input matInput plahcehvolder="Nova Tarefa" [(ngModel)]="tarefa.nome" formControlName="nome">
 </mat-form-field>
 
 <mat-form-field>
   <mat-label>Prioridade</mat-label>
-  <mat-select  [(ngModel)]="tarefa.prioridade">
+  <mat-select  [(ngModel)]="tarefa.prioridade" >
     <mat-option value="Baixa">Baixa</mat-option>
     <mat-option value="Média">Média</mat-option>
     <mat-option value="Elevada">Elevada</mat-option>
@@ -17,12 +17,12 @@
 
 <mat-form-field>
   <mat-label>Descrição</mat-label>
-  <textarea matInput [(ngModel)]="tarefa.descricao"></textarea>
+  <textarea matInput [(ngModel)]="tarefa.descricao" formControlName="descricao"></textarea>
 </mat-form-field>
 
 <mat-form-field>
   <mat-label>Prazo da tarefa</mat-label>
-  <input matInput [matDatepicker]="prazo" [min]="minDate" [(ngModel)]="tarefa.prazo">
+  <input matInput [matDatepicker]="prazo" [min]="minDate" [(ngModel)]="tarefa.prazo" formControlName="nome">
   <mat-hint>MM/DD/YYYY</mat-hint>
   <mat-datepicker-toggle matIconSuffix [for]="prazo"></mat-datepicker-toggle>
   <mat-datepicker #prazo></mat-datepicker>
@@ -32,10 +32,9 @@
   <button
     mat-raised-button
     color="primary"
-    (click)="criarTarefa()"
-    (click)="openSnackBar('Nova tarefa', 'Fechar')"
->Criar</button>
+    (click)="editarTarefa(tarefa)"
+    >Editar</button>
   <button mat-raised-button color="accent">Cancelar</button>
 </div>
-</div>
+</form>
 

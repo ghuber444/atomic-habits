@@ -34,6 +34,8 @@ import { BotaoEditarComponent } from './botoes/botao-editar/botao-editar.compone
 import { BotaoComecarComponent } from './botoes/botao-comecar/botao-comecar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ModalEdicaoComponent } from './Status-tarefa/modal-edicao/modal-edicao.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -70,7 +72,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [QuotesService],

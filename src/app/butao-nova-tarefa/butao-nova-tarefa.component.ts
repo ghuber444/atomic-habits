@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DetalhesTarefaComponent } from '../Status-tarefa/detalhes-tarefa/detalhes-tarefa.component';
 import { MatSnackBar } from '@angular/material/snack-bar';

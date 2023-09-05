@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TarefaService } from 'src/app/services/tarefa.service';
 import { Status, Tarefa } from '../../Status-tarefa/tarefas';
@@ -11,6 +11,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./botao-eliminar.component.css']
 })
 export class BotaoEliminarComponent implements OnInit {
+
+  @Input() id = 0;
 
   tarefa: any = {
     id: 0,
@@ -30,21 +32,18 @@ export class BotaoEliminarComponent implements OnInit {
     private snackBar: MatSnackBar
   ) {}
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id')
-    this.service.buscarPorId(parseInt(id!)).subscribe((tarefa) => {
+    console.log(this.id);
+    this.service.buscarPorId(this.id).subscribe((tarefa) => {
       this.tarefa = tarefa
-      console.log("Hey"+id)
+      console.log("Hey:", this.tarefa);
     })
   }
 
-  openSnackBar(message: string, action: string){
-    this.snackBar.open(message, action, {duration: 2000})
-  }
-
   eliminarTarefa() {
-    this.tarefaParaEliminar = this.tarefa.id
     if(this.tarefa.id) {
       this.service.eliminar(this.tarefa.id).subscribe()
+      window.location.reload()
+      this.snackBar.open('Tarefa eliminada', 'Fechar')
     }
 
   }

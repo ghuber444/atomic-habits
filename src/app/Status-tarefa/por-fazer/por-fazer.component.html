@@ -17,10 +17,9 @@
 
     <p>Terminar tarefa até {{ tarefa.prazo }}</p>
     <mat-card-actions>
-      <div><app-botao-editar></app-botao-editar></div>
-
-      <div><app-botao-comecar></app-botao-comecar></div>
-      <div><app-botao-eliminar ></app-botao-eliminar></div>
+      <div><app-botao-editar [id]="tarefa.id"></app-botao-editar></div>
+      <div><app-botao-comecar ></app-botao-comecar></div>
+      <div><app-botao-eliminar [id]="tarefa.id"></app-botao-eliminar></div>
     </mat-card-actions>
   </mat-card>
 

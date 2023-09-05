@@ -15,6 +15,11 @@ export class TarefaService {
     return this.http.post<Tarefa[]>(this.URL, tarefa)
   }
 
+  editar(tarefa: Tarefa) {
+    const url = `${this.URL}/${tarefa.id}`
+    return this.http.put(url, tarefa)
+  }
+
   listar(){
     return this.http.get<Tarefa[]>(this.URL)
   }
